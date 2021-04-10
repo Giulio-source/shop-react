@@ -1,3 +1,5 @@
+//VARIABLES//
+
 $dosis: "Dosis", sans-serif;
 $cream: #f2e8e3;
 $hazelnut: #c9ada6;
@@ -5,6 +7,61 @@ $mattebrown: #9a8c98;
 $dark1: #4a4e69;
 $dark2: #22223b;
 
+//GENERAL CLASSES//
+
+.m2 {
+  margin: 2rem;
+}
+
+.mb1 {
+  margin-bottom: 1rem;
+}
+
+//WHOLE WEBSITE//
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: red;
+  font-family: $dosis;
+  text-align: center;
+}
+
+//PRODUCTS LIST//
+
+#products-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 70vw;
+  margin: auto;
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0 0.2rem 0.6rem rgba($color: #929292, $alpha: 0.3);
+    border-radius: 20px;
+    .product-card-image {
+      max-width: 100px;
+    }
+    .product-card-title {
+      font-weight: 200;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    .product-card-price {
+      color: $hazelnut;
+      font-weight: 600;
+    }
+    .product-card-category {
+      color: $mattebrown;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
 }
