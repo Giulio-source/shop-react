@@ -4,13 +4,13 @@ export const ShopContext = createContext();
 
 export const ShopProvider = ({ children }) => {
   const [selectedProduct, setSelectedProduct] = useState({});
-  const [cart, setCart] = useState({});
+  const [cartList, setCartList] = useState({});
 
   return (
     <ShopContext.Provider
       value={{
         selected: [selectedProduct, setSelectedProduct],
-        cart: [cart, setCart],
+        cart: [cartList, setCartList],
       }}
     >
       {children}

@@ -44,16 +44,54 @@ $dark2: #22223b;
 .transform-upper {
   text-transform: uppercase;
 }
+//----color
+.bg-cream {
+  background: $cream;
+}
+.bg-hazel {
+  background: $hazelnut;
+}
+.bg-matte {
+  background: $mattebrown;
+}
+.bg-dark1 {
+  background: $dark1;
+}
+.bg-dark2 {
+  background: $dark2;
+}
+.cream {
+  color: $cream;
+}
+.hazel {
+  color: $hazelnut;
+}
+.matte {
+  color: $mattebrown;
+}
+.dark1 {
+  color: $dark1;
+}
+.dark2 {
+  color: $dark2;
+}
+.white {
+  color: white;
+}
 
 .button {
   border: solid 1px $dark2;
   display: inline-block;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
+  cursor: pointer;
   &:hover {
     background: $dark2;
     color: white;
   }
+}
+.no-border {
+  border: none;
 }
 
 //WHOLE WEBSITE//
@@ -135,5 +173,11 @@ a {
     position: fixed;
     top: 2rem;
     left: 10%;
+  }
+
+  .button-add-cart {
+    &:hover {
+      background: $mattebrown;
+    }
   }
 }
