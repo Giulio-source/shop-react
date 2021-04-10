@@ -10,8 +10,14 @@ $dark2: #22223b;
 //GENERAL CLASSES//
 
 //----positioning
+.p1 {
+  padding: 1rem;
+}
 .m2 {
   margin: 2rem;
+}
+.m-auto {
+  margin: auto;
 }
 .mb1 {
   margin-bottom: 1rem;
@@ -40,6 +46,12 @@ $dark2: #22223b;
 }
 .fw800 {
   font-weight: 800;
+}
+.fs1 {
+  font-size: 1rem;
+}
+.fs2 {
+  font-size: 2rem;
 }
 .transform-upper {
   text-transform: uppercase;
@@ -78,6 +90,17 @@ $dark2: #22223b;
 .white {
   color: white;
 }
+//----sizing
+.max-70vw {
+  max-width: 70vw;
+}
+//----positioning
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 
 .button {
   border: solid 1px $dark2;
@@ -110,6 +133,24 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+//HEADER//
+
+nav {
+  align-items: center;
+  max-width: 70vw;
+  margin: auto;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#cart-index {
+  line-height: 1rem;
+  font-size: 0.7rem;
+  top: -3px;
+  width: 1rem;
+  border-radius: 100%;
 }
 
 //PRODUCTS LIST//
@@ -168,7 +209,6 @@ a {
     font-size: 1.2rem;
     text-align: justify;
   }
-
   #back-button {
     position: fixed;
     top: 2rem;

@@ -13,15 +13,10 @@ function App() {
       <Router>
         <div>
           <Header />
-
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <div className="container m2">
             <Route path="/" exact>
-              <h1 className="main-title m2">A tidy shop</h1>
               <ProductsList />
             </Route>
-
             <Route path="/detail">
               <ProductDetail />
             </Route>

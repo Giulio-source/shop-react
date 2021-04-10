@@ -5,52 +5,67 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "./ShopContext";
 
 function ProductDetail() {
-  const { selected, cart } = useContext(ShopContext);
+  const { selected, cart, cartIndex } = useContext(ShopContext);
   const [selectedProduct, setSelectedProduct] = selected;
   const [cartList, setCartList] = cart;
+  const [cartLength, setCartLength] = cartIndex;
+
   const handleOnAdd = () => {
+    //update cart index
+    setCartLength(cartLength + 1);
+    //create new item to be added to cart
     const newCartItem = _.pick(selectedProduct, ["title", "price"]);
+    //add and update quantity key-value pair
     newCartItem["quantity"] = cartList[selectedProduct.id]
       ? cartList[selectedProduct.id].quantity + 1
       : 1;
-    setCartList({ ...cartList, [selectedProduct.id]: newCartItem });
+    //update cart
+    setCartList({
+      ...cartList,
+      [selectedProduct.id]: newCartItem,
+    });
   };
+
   return (
-    <div id="product-detail">
-      <div className="product-detail-image-container">
+    <>
+      <div className="back-button-container max-70vw flex m-auto p1">
         <Link to="/">
           <div id="back-button" className="button mb1">
             back to products
           </div>
         </Link>
+      </div>
 
-        <img
-          className="product-detail-image "
-          src={selectedProduct.image}
-          alt={selectedProduct.title}
-        />
+      <div id="product-detail">
+        <div className="product-detail-image-container">
+          <img
+            className="product-detail-image "
+            src={selectedProduct.image}
+            alt={selectedProduct.title}
+          />
+        </div>
+        <div className="product-detail-content">
+          <h3 className="product-detail-title fw200 transform-upper mb1">
+            {selectedProduct.title}
+          </h3>
+          <h3 className="product-detail-price fw600 mb1 jstart">
+            € {selectedProduct.price}
+          </h3>
+          <h3 className="product-detail-category fw400 transform-upper mb1 jstart">
+            {selectedProduct.category}
+          </h3>
+          <p className="product-detail-description fw200 mb1">
+            {selectedProduct.description}
+          </p>
+          <h3
+            className="button button-add-cart transform-upper fw400 bg-hazel white no-border"
+            onClick={handleOnAdd}
+          >
+            Add to Cart
+          </h3>
+        </div>
       </div>
-      <div className="product-detail-content">
-        <h3 className="product-detail-title fw200 transform-upper mb1">
-          {selectedProduct.title}
-        </h3>
-        <h3 className="product-detail-price fw600 mb1 jstart">
-          € {selectedProduct.price}
-        </h3>
-        <h3 className="product-detail-category fw400 transform-upper mb1 jstart">
-          {selectedProduct.category}
-        </h3>
-        <p className="product-detail-description fw200 mb1">
-          {selectedProduct.description}
-        </p>
-        <h3
-          className="button button-add-cart transform-upper fw400 bg-hazel white no-border"
-          onClick={handleOnAdd}
-        >
-          Add to Cart
-        </h3>
-      </div>
-    </div>
+    </>
   );
 }
 
