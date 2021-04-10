@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { SelectedContext } from "./SelectedContext";
+import { ShopContext } from "./ShopContext";
 
 function ProductDetail() {
-  const [selectedProduct, setSelectedProduct] = useContext(SelectedContext);
+  const { selected } = useContext(ShopContext);
+  const [selectedProduct, setSelectedProduct] = selected;
   return (
     <div id="product-detail">
       <div className="product-detail-image-container">
         <Link to="/">
-          <div className="button-container flex jstart">
-            <p className="button mb1">back to products</p>
+          <div id="back-button" className="button mb1">
+            back to products
           </div>
         </Link>
 

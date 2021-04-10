@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import ProductsList from "./ProductsList";
 import ProductDetail from "./ProductDetail";
-import { SelectedProvider } from "./SelectedContext";
+import { ShopProvider } from "./ShopContext";
 import Header from "./Header";
 import "./styles.scss";
 
 function App() {
   return (
-    <SelectedProvider>
+    <ShopProvider>
       <Router>
         <div>
           <Header />
@@ -28,7 +28,7 @@ function App() {
           </div>
         </div>
       </Router>
-    </SelectedProvider>
+    </ShopProvider>
   );
 }
 

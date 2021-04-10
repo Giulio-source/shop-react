@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { SelectedContext } from "./SelectedContext";
+import { ShopContext } from "./ShopContext";
 
 function ProductCard({ product }) {
-  const [selectedProduct, setSelectedProduct] = useContext(SelectedContext);
+  const { selected } = useContext(ShopContext);
+  const [selectedProduct, setSelectedProduct] = selected;
   const handleOnSelect = () => {
     setSelectedProduct(product);
   };

@@ -111,6 +111,7 @@ a {
   align-items: center;
   max-width: 60%;
   margin: auto;
+  min-height: 80vh;
   grid-template-columns: 1fr 1fr;
   .product-detail-image {
     max-width: 80%;
@@ -128,5 +129,11 @@ a {
   .product-detail-description {
     font-size: 1.2rem;
     text-align: justify;
+  }
+
+  #back-button {
+    position: fixed;
+    top: 2rem;
+    left: 10%;
   }
 }
