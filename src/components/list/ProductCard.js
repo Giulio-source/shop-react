@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { ShopContext } from "./ShopContext";
+import { ShopContext } from "../ShopContext";
 
 function ProductCard({ product }) {
   const { selected } = useContext(ShopContext);

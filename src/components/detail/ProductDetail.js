@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { ShopContext } from "./ShopContext";
+import { ShopContext } from "../ShopContext";
 
 function ProductDetail() {
   const { selected, cart, cartIndex } = useContext(ShopContext);
@@ -36,7 +36,7 @@ function ProductDetail() {
         </Link>
       </div>
 
-      <div id="product-detail">
+      <div id="product-detail" className="m-auto">
         <div className="product-detail-image-container">
           <img
             className="product-detail-image "

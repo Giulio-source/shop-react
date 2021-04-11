@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { useContext } from "react";
 
-import { ShopContext } from "./ShopContext";
+import { ShopContext } from "../ShopContext";
 
 function CartToggle({ id, quantity }) {
   const { cart, cartIndex } = useContext(ShopContext);
@@ -27,15 +27,15 @@ function CartToggle({ id, quantity }) {
   return (
     <>
       <button
-        className="quantity-toggle white bg-hazel fs1 fw200"
+        className="quantity-toggle white bg-hazel fs1 fw200 no-border"
         type="submit"
         onClick={handleRemoveQuantity}
       >
         -
       </button>
-      {quantity}
+      <p>{quantity}</p>
       <button
-        className="quantity-toggle white bg-hazel fs1 fw200"
+        className="quantity-toggle white bg-hazel fs1 fw200 no-border"
         type="submit"
         onClick={handleAddQuantity}
       >

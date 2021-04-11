@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import ProductsList from "./ProductsList";
-import ProductDetail from "./ProductDetail";
+import ProductsList from "./list/ProductsList";
+import ProductDetail from "./detail/ProductDetail";
 import ScrollToTop from "./ScrollToTop";
-import Cart from "./Cart";
+import Cart from "./cart/Cart";
 import { ShopProvider } from "./ShopContext";
 import Header from "./Header";
 import "./styles.scss";
@@ -14,9 +14,9 @@ function App() {
     <ShopProvider>
       <Router>
         <ScrollToTop />
-        <div>
+        <div className="main-container max-70vw p2 m-auto">
           <Header />
-          <div className="container m2">
+          <div className="container">
             <Route path="/" exact>
               <ProductsList />
             </Route>

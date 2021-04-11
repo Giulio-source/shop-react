@@ -8,7 +8,7 @@ function Header() {
   const [cartList, setCartList] = cart;
   const [cartLength, setCartLength] = cartIndex;
   return (
-    <nav id="main-nav" className="flex">
+    <nav id="main-nav" className="flex m-auto">
       <Link to="/">
         <h1 className="fs2">A tidy shop</h1>
       </Link>

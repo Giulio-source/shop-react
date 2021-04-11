@@ -1,8 +1,7 @@
-import { render } from "@testing-library/react";
 import _ from "lodash";
 import React, { useContext } from "react";
 
-import { ShopContext } from "./ShopContext";
+import { ShopContext } from "../ShopContext";
 import CartToggle from "./CartToggle";
 
 function Cart() {
@@ -18,10 +17,7 @@ function Cart() {
       <tr>
         <td>{product.title}</td>
         <td>€ {parseFloat(product.price).toFixed(2)}</td>
-        <td>
-          {/* <span className>-</span>
-          {product.quantity}
-          <span>+</span> */}
+        <td className="quantity-cell flex jcenter">
           <CartToggle id={product.id} quantity={product.quantity} />
         </td>
         <td>€ {(product.price * product.quantity).toFixed(2)}</td>
@@ -41,7 +37,7 @@ function Cart() {
         {renderCart}
         <tr>
           <td colSpan="3"></td>
-          <td>€ {grandTotal.toFixed(2)}</td>
+          <td className="grand-total">€ {grandTotal.toFixed(2)}</td>
         </tr>
       </table>
     </div>
