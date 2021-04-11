@@ -221,3 +221,21 @@ nav {
     }
   }
 }
+
+//CART//
+
+#table-container {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background: $cream;
+  }
+  td,
+  th {
+    border: 1px solid $cream;
+    padding: 0.5rem;
+  }
+}

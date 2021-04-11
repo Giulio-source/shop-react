@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { ShopContext } from "./ShopContext";
 
@@ -8,13 +9,17 @@ function Header() {
   const [cartLength, setCartLength] = cartIndex;
   return (
     <nav id="main-nav" className="flex">
-      <h1 className="fs2">A tidy shop</h1>
-      <h2 className="cart-icon relative">
-        Cart{" "}
-        <span id="cart-index" className="absolute white bg-hazel">
-          {cartLength}
-        </span>
-      </h2>
+      <Link to="/">
+        <h1 className="fs2">A tidy shop</h1>
+      </Link>
+      <Link to="/cart">
+        <h2 className="cart-icon relative">
+          Cart{" "}
+          <span id="cart-index" className="absolute white bg-hazel">
+            {cartLength}
+          </span>
+        </h2>
+      </Link>
     </nav>
   );
 }

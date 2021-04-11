@@ -14,7 +14,7 @@ function ProductDetail() {
     //update cart index
     setCartLength(cartLength + 1);
     //create new item to be added to cart
-    const newCartItem = _.pick(selectedProduct, ["title", "price"]);
+    const newCartItem = _.pick(selectedProduct, ["id", "title", "price"]);
     //add and update quantity key-value pair
     newCartItem["quantity"] = cartList[selectedProduct.id]
       ? cartList[selectedProduct.id].quantity + 1
