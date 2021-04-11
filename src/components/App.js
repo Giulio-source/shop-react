@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import ProductsList from "./ProductsList";
 import ProductDetail from "./ProductDetail";
+import ScrollToTop from "./ScrollToTop";
 import Cart from "./Cart";
 import { ShopProvider } from "./ShopContext";
 import Header from "./Header";
@@ -12,6 +13,7 @@ function App() {
   return (
     <ShopProvider>
       <Router>
+        <ScrollToTop />
         <div>
           <Header />
           <div className="container m2">
