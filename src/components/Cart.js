@@ -3,6 +3,7 @@ import _ from "lodash";
 import React, { useContext } from "react";
 
 import { ShopContext } from "./ShopContext";
+import CartToggle from "./CartToggle";
 
 function Cart() {
   const { cart } = useContext(ShopContext);
@@ -17,7 +18,12 @@ function Cart() {
       <tr>
         <td>{product.title}</td>
         <td>€ {parseFloat(product.price).toFixed(2)}</td>
-        <td>{product.quantity}</td>
+        <td>
+          {/* <span className>-</span>
+          {product.quantity}
+          <span>+</span> */}
+          <CartToggle id={product.id} quantity={product.quantity} />
+        </td>
         <td>€ {(product.price * product.quantity).toFixed(2)}</td>
       </tr>
     );

@@ -238,4 +238,14 @@ nav {
     border: 1px solid $cream;
     padding: 0.5rem;
   }
+  .quantity-toggle {
+    border: none;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 100%;
+    margin: 0 0.5rem;
+    &:focus {
+      outline: none;
+    }
+  }
 }
