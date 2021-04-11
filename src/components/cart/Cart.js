@@ -14,7 +14,7 @@ function Cart() {
   const renderCart = arrayCart.map((product) => {
     grandTotal += product.price * product.quantity;
     return (
-      <tr>
+      <tr key={product.id + product.title}>
         <td>{product.title}</td>
         <td>€ {parseFloat(product.price).toFixed(2)}</td>
         <td className="quantity-cell flex jcenter">
@@ -28,17 +28,21 @@ function Cart() {
   return (
     <div id="table-container" className="max-70vw m-auto p1">
       <table>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
-        </tr>
-        {renderCart}
-        <tr>
-          <td colSpan="3"></td>
-          <td className="grand-total">€ {grandTotal.toFixed(2)}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+
+          {renderCart}
+
+          <tr>
+            <td colSpan="3"></td>
+            <td className="grand-total">€ {grandTotal.toFixed(2)}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
